@@ -9,6 +9,14 @@ public class UiManager : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
